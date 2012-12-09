@@ -5078,7 +5078,19 @@ wysihtml5.dom.parse = (function() {
         attributeValue = (attributeValue || "").replace(REG_EXP, "");
         return attributeValue || null;
       };
-    })()
+    })(),
+    
+    href: (function() {
+      var REG_EXP = /[<>]/g;
+      return function(attributeValue) {
+        if (!attributeValue || !attributeValue.match(REG_EXP)) {
+          return null;
+        }
+        else {
+          return attributeValue.replace(REG_EXP, '');
+        }
+      }
+    })
   };
   
   // ------------ class converter (converts an html attribute to a class name) ------------ \\
