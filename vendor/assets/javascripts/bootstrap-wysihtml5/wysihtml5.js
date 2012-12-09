@@ -5090,7 +5090,7 @@ wysihtml5.dom.parse = (function() {
           return attributeValue.replace(REG_EXP, '');
         }
       }
-    })
+    })()
   };
   
   // ------------ class converter (converts an html attribute to a class name) ------------ \\
