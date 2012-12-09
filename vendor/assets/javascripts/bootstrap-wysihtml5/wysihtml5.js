@@ -5083,7 +5083,7 @@ wysihtml5.dom.parse = (function() {
     href: (function() {
       var REG_EXP = /[<>]/g;
       return function(attributeValue) {
-        if (!attributeValue || !attributeValue.match(REG_EXP)) {
+        if (!attributeValue || attributeValue.match(REG_EXP)) {
           return null;
         }
         else {
