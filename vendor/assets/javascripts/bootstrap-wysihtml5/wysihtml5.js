@@ -5081,7 +5081,7 @@ wysihtml5.dom.parse = (function() {
     })(),
     
     href: (function() {
-      var REG_EXP = /^[\w\d\$\-\.\+\!\'\(\)\,\/\?&:]$/g;
+      var REG_EXP = /^[\w\d\$\-\.\+\!\'\(\)\,\/\?&:\%]$/g;
       return function(attributeValue) {
         if (!attributeValue || !attributeValue.match(REG_EXP)) {
           return null;
