@@ -5081,13 +5081,14 @@ wysihtml5.dom.parse = (function() {
     })(),
 
     href: (function() {
-      var REG_EXP = /^(\/|https?:\/\/|mailto:)[\w\d\$\-\.\+\!\'\(\)\,\/\?&:\%@\#]$/g;
+      var REG_EXP = /^((https?|ftp):\/\/(([a-z0-9$_\.\+!\*\'\(\),;\?&=-]|%[0-9a-f]{2})+(:([a-z0-9$_\.\+!\*\'\(\),;\?&=-]|%[0-9a-f]{2})+)?@)?((([a-z0-9]\.|[a-z0-9][a-z0-9-]*[a-z0-9]\.)*[a-z][a-z0-9-]*[a-z0-9]|((\d|[1-9]\d|1\d{2}|2[0-4][0-9]|25[0-5])\.){3}(\d|[1-9]\d|1\d{2}|2[0-4][0-9]|25[0-5]))(:\d+)?))?(((\/+([a-z0-9$_\.\+!\*\'\(\),;:@&=-]|%[0-9a-f]{2})*)*(\?([a-z0-9$_\.\+!\*\'\(\),;:@&=-]|%[0-9a-f]{2})*)?)?)?(#([a-z0-9$_\.\+!\*\'\(\),;:@&=-]|%[0-9a-f]{2})*)?$/i;
+
       return function(attributeValue) {
         if (!attributeValue || !attributeValue.match(REG_EXP)) {
           return null;
         }
         else {
-          return attributeValue.replace(REG_EXP, '');
+          return attributeValue;
         }
       }
     })()
